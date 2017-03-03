@@ -1,0 +1,289 @@
+& > .info
+	position relative
+	
+
+	&:before
+		background-color light-color
+		position absolute
+		right 0
+		bottom 0
+		top 40px
+		left 0
+		content ''
+		display block
+
+	.top-line
+		height 40px
+		width 50%
+		background-color light-color
+
+	topLine = {
+		width: 4px
+		height: 50px
+		position: absolute
+		background-color: primary-color
+		content: ''
+	}
+	.h2
+		line-height @font-size
+		height @font-size
+		color dark-color
+
+	.furniture, .decor, .quality
+		position relative;
+		.mid
+			width central-width
+			margin 0 auto
+			box-sizing border-box
+			position relative
+		
+		.inner
+			overflow hidden
+			width 100%
+			
+	.furniture, .decor
+		.content
+			display flex
+			
+			.textFull
+				font-size 170px
+				color gray-color
+				opacity 0.2
+				text-transform uppercase
+				font-weight bold
+				position absolute
+				letter-spacing 0.08em
+				top 135px
+				
+			.text
+				padding-top 115px
+				width 350px
+				
+				.number
+					font-size 36px
+					font-weight bold
+					letter-spacing 0.1em
+					padding-top 50px
+					position absolute
+					bottom 0
+					
+					&:after
+						content '.'
+						color primary-color
+			.image
+				width 620px
+				height 400px
+				box-shadow 0 0 15px 1px rgba(0, 0, 0, 0.2)
+
+	.furniture
+		margin-top mt = 90px
+		
+		.letter
+			{bigText}
+			text-indent -26px
+			top -300px
+			left 50%
+			margin-left -(central-width/2)
+
+		&:after
+			{topLine}
+			left 50%
+			margin-left (central-width/2) - @width
+			top -(mt + @height/2)
+			transition opacity longTransition, transform longTransition
+			opacity 0
+			transform translate(-200px, 0)
+		
+		&.show:after
+			transform translate(0, 0)
+			opacity 1
+
+			
+		.content
+			.textFull
+				left 800px
+				
+			.text
+				padding-left 170px
+				
+				.h2:before
+					left -170px
+				.p:before
+					left -65px
+						
+				.number
+					left 0
+
+			.image
+				background-image url(../images/furniture-01.png)
+				background-position top right
+				margin-left auto
+				filter grayscale(40%)
+	.decor
+		padding-top mt = 280px
+		overflow hidden
+		
+		.letter
+			{bigText}
+			text-align right
+			top 20px
+			right 50%
+			margin-right - ((central-width/2) + 16)
+			
+		&:after
+			{topLine}
+			left 50%
+			margin-left -(central-width/2)
+			top 100px
+			transition opacity longTransition, transform longTransition
+			opacity 0
+			transform translate(200px, 0)
+		
+		&.show:after
+			transform translate(0, 0)
+			opacity 1
+
+		.content
+			.textFull
+				left -365px
+				
+			.text
+				padding-right 170px
+				
+				.h2
+					text-align right
+					&:before
+						right -170px
+				.p
+					text-align right
+					&:before
+						right -65px
+						
+				.mini-button
+					justify-content flex-end
+					
+				.number
+					right 0
+				
+			.image
+				background-image url(../images/decor-01.png)
+				background-size cover
+				margin-right auto
+				filter grayscale(50%)
+	.quality
+		margin-top mt = 220px
+		.inner
+			overflow hidden
+			position relative
+			
+			.mid
+				padding-bottom 160px
+		.letter
+			{bigText}
+			text-align right
+			bottom  - mt
+			right 50%
+			margin-right - ((central-width/2) + 16)
+
+		&:after
+			{topLine}
+			left 50%
+			margin-left (central-width/2)
+			top -(mt - 60)
+			transition opacity longTransition, transform longTransition
+			opacity 0
+			transform translate(0, 200px)
+		
+		&.show:after
+			transform translate(0, 0)
+			opacity 1
+			
+		.h2
+			text-align center
+			margin-bottom 40px
+			position relative
+			
+			&:before
+				content ''
+				position absolute
+				width 45px
+				height 4px
+				left 50%
+				bottom -20px
+				margin-left - (@width / 2)
+				background-color primary-color
+		.p
+			width 50%
+			text-align center
+			margin auto
+		.botText
+			{bigText}
+			bottom - (@height/2 + 50)
+			left 50%
+			margin-left (central-width/2) - (@height/2)
+		
+		.media
+			margin-top 70px
+			display flex
+			justify-content center
+			
+			.video
+				padding 0 40px
+				wh = 270px
+				
+				.name
+					font-size 16px
+					text-align center
+					position relative
+					padding-top 15px
+					
+					&:before
+						background-color primary-color
+						height 1px
+						width 25px
+						display block
+						content ''
+						position absolute
+						top 0
+						left 50%
+						margin-left -(@width / 2)
+				
+				.view
+					border 1px solid #e1e1e1
+					width wh
+					height @width
+					border-radius @width
+					position relative
+					margin-bottom 25px
+					
+					.image
+						margin auto
+						margin-top 10px
+						width wh - @margin-top*2
+						height @width
+						border-radius @width
+						overflow hidden
+						
+						img
+							margin-left -20%
+							
+					.play
+						width mwh = 70px
+						height hg = @width
+						background-color alpha(primary-color, 80%)
+						position absolute
+						top 50%
+						left 50%
+						margin-top -(@height/2)
+						margin-left -(@width/2)
+						border-radius @width
+						cursor pointer
+						
+						svg
+							height 25px
+							width 22px
+							fill light-color
+							display block
+							margin-top (hg / 2) - (@height / 2)
+							margin-left (mwh / 2) - (@width / 2) + 2
+

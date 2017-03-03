@@ -1,0 +1,196 @@
+vendors = official
+
+@import 'proxima.css'
+
+primary-color = #bea67c
+light-color = #fff
+dark-color = #000
+gray-color = #d0d0d0
+central-width = 1190px
+standartTransition = 250ms ease-in-out
+longTransition = 500ms ease-in-out
+bubble = 500ms cubic-bezier(0,.65,.05,1.57)
+
+*:focus
+	outline none
+
+body
+	background-color dark-color
+	margin 0
+	font-family ProximaNova, sans-serif
+	
+
+bgstyle = @block {
+	background-size cover
+	width 50%
+	height calc(100vh + 40px)
+	position absolute
+	top 0
+	opacity 0.1
+}
+
+#left-bg
+	background url(../images/bg/left.png) no-repeat right top
+	{bgstyle}
+	left 0
+		
+#right-bg
+	background url(../images/bg/right.png) no-repeat
+	{bgstyle}
+	left 50%
+
+@media all and (max-width: 1190px)
+	#left-bg
+		left 0
+		width (central-width/2)
+			
+	#right-bg
+		background url(../images/bg/right.png) no-repeat
+		{bgstyle}
+		width (central-width/2)
+		left (central-width/2)
+
+.shape-rendering-clip-edges
+	shape-rendering crispEdges
+
+.scroll-animate
+.scroll-animate-item
+	transition opacity longTransition, transform longTransition
+	
+	&.fade
+		opacity 0
+	&.scale
+		transform scale(0)
+		transition opacity bubble, transform bubble
+	&.right-left
+		transform translate(200px, 0)
+	&.left-right
+		transform translate(-200px, 0)
+	&.bottom-top
+		transform translate(0, 200px)
+	&.top-bottom
+		transform translate(0, -200px)
+	
+.scroll-animate.show
+.scroll-animate-item.show
+	&.fade
+		opacity 1
+	&.right-left
+	&.left-right
+	&.bottom-top
+	&.top-bottom
+		transform translate(0, 0)
+	&.scale
+		transform scale(1)
+		
+	
+
+h1, h2, p
+	margin 0
+	padding 0
+	font-size inherit
+	
+.h2
+	font-size 48px
+	text-transform uppercase
+	margin-bottom 20px
+	letter-spacing 0.07em
+	font-weight bold
+.p
+	font-size 15px
+	margin-bottom 15px
+	position relative
+	line-height 30px
+	letter-spacing 0.025em
+
+
+.text
+	.h2
+		position relative
+		
+		&:before
+			width 150px
+			position absolute
+			height 1px
+			background-color dark-color
+			top 50%
+			margin-top -3px
+			display block
+			content ''
+	.p
+		color dark-color
+		
+		&:before
+			top 12px
+			width 45px
+			position absolute
+			height 4px
+			background-color primary-color
+			display block
+			content ''
+
+.mini-button
+	font-size 14px
+	font-weight bold
+	letter-spacing 0.2em
+	text-transform uppercase
+	display flex
+	
+	.click
+		display flex
+		align-items center
+		position relative
+		cursor pointer
+		padding 10px 0
+
+		&:before
+			background-color primary-color
+			height 2px
+			width 44px
+			position absolute
+			bottom 0px
+			display block
+			content ''
+		
+		svg
+			margin-left 5px
+			display block
+			
+			& > polyline
+				stroke primary-color
+bigText = {
+	font-size: 400px
+	color: primary-color
+	opacity: 0.1
+	text-transform: uppercase
+	font-weight: bold
+	position: absolute
+	height: 400px
+	line-height: 400px
+}
+
+#wrapper
+	min-width central-width
+	& > .top
+		min-height 900px
+		height 100vh
+		position relative
+		@import 'top.styl'
+	
+	@import 'info.styl'
+	
+	& > .video
+		position relative
+		overflow hidden
+		@import 'video.styl'
+	& > .about-us
+		position relative
+		@import 'about-us.styl'
+	& > .footer
+		@import 'footer.styl'
+
+				
+		
+
+
+

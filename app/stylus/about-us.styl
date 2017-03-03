@@ -1,0 +1,56 @@
+&:before
+	background-color light-color
+	position absolute
+	right 0
+	bottom 0
+	top 0
+	left 0
+	content ''
+	display block
+
+
+.inner
+	overflow hidden
+	padding pt = 120px 0
+	position relative
+	
+	.letter
+		{bigText}
+		position absolute
+		left 50%
+		top -180px
+		margin-left (central-width/2) - 150px
+
+	.mid
+		width central-width
+		margin auto
+		display flex
+
+		.text
+			width 330px
+			padding-top 100px
+			padding-right 150px
+			
+			.h2:before
+					left -170px
+			.p:before
+					left -65px
+		.image
+			width 620px
+			height 400px
+			box-shadow 0 0 15px 1px rgba(0, 0, 0, 0.2)
+			background-image url(../images/about-us-01.png)
+			background-size cover
+			margin-right auto
+			filter grayscale(50%)
+		
+		.textFull
+			font-size 170px
+			color gray-color
+			opacity 0.2
+			text-transform uppercase
+			font-weight bold
+			position absolute
+			letter-spacing 0.08em
+			top 135px + pt
+			left -(central-width/2) + 550
