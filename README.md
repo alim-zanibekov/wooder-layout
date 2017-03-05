@@ -11,6 +11,7 @@ Gulp config in ./gulp/config.js
 Before all:
 ```sh
 $ git clone git://github.com/AlimZanibekov/wooder-layout.git
+$ cd wooder-layout
 $ npm install
 ```
 
