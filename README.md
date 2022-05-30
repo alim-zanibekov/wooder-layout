@@ -1,6 +1,6 @@
 # Wooder psd template layout
 
-[Demo](http://AlimZanibekov.github.io/wooder-layout/public)
+[Demo](http://alim-zanibekov.github.io/wooder-layout/public)
 
 [PSD](https://www.behance.net/gallery/33742162/WOODER-Free-PSD-Template)
 
